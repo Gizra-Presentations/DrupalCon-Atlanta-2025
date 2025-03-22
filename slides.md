@@ -28,7 +28,7 @@ Time breakdown for a typical new Paragraph:
 
 ---
 
-```php
+<pre><code data-trim class="language-php" data-line-numbers>
 protected function buildElementCta(string $title, array $body, Link $link): array {
     $elements = [];
 
@@ -49,3 +49,4 @@ protected function buildElementCta(string $title, array $body, Link $link): arra
     $elements = $this->buildInnerElementLayout($elements, 'light-gray');
     return $this->wrapContainerNarrow($elements);
 }
+</code></pre>
