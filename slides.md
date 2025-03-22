@@ -73,3 +73,46 @@ server-theme-staff-card.html.twig
 ```
 
 ![](assets/long-twig.jpg)
+
+---
+
+<pre><code data-trim class="language-twig" data-line-numbers>
+# server-theme-text-decoration--italic.html
+
+<div class="italic">
+  {{ element }}
+</div>
+</code></pre>
+
+---
+
+<pre><code data-trim class="language-twig" data-line-numbers>
+# server-theme-text-decoration--center.html.twig
+
+<div class="text-center">
+  {{ element }}
+</div>
+
+</code></pre>
+
+---
+
+<pre><code data-trim class="language-twig" data-line-numbers>
+# server-theme-text-decoration--font-weight.html.twig
+
+{% if font_weight == 'normal' %}
+  {% set weight_class = 'font-normal' %}
+{% elseif font_weight == 'medium' %}
+  {% set weight_class = 'font-medium' %}
+{% elseif font_weight == 'bold' %}
+  {% set weight_class = 'font-bold' %}
+{% endif %}
+
+<div class="{{ weight_class }}">
+  {{ element }}
+</div>
+
+
+</code></pre>
+
+---
