@@ -189,3 +189,22 @@ protected function buildElementCta(string $title, array $body, Link $link): arra
 </code></pre>
 
 ---
+
+```
+https://drupal-starter.ddev.site:4443/style-guide#element-quote
+```
+
+![](assets/quote.jpg)
+
+---
+
+## Two Types of Twig Files
+
+- 🎨 **Styling Twig**:
+  Applies **visual styles**
+  _e.g. spacing, font size, color, alignment, flex_
+
+- 🧱 **Layout Twig** *(rare)*:
+  Defines **layout** and **position**
+  _e.g. two columns_
+
