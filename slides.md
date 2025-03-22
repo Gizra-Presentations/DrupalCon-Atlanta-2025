@@ -433,12 +433,9 @@ public function buildFull(array $build, NodeInterface $entity) {
 
 ---
 
-## Help from PHPStan
-
 ```bash
 ddev phpstan
 ```
 
-![](assets/phpstan-1.png)
 
-![](assets/phpstan-2.png)
+![](assets/phpstan.png)
