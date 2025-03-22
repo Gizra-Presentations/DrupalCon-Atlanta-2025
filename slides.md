@@ -165,6 +165,28 @@ server-theme-staff-card.html.twig
 
 ---
 
+<pre><code data-trim class="language-twig" data-line-numbers>
+# server-theme-container-narrow.html.twig
+
+{% import '@server_theme/templates/server-theme-bg-color-base.html.twig' as bgColorBase %}
+
+{% set color_class = bgColorBase.getBgColor(bg_color) %}
+
+{% if color_class|trim != 'bg-transparent' %}
+  {% set py_class = 'py-8 md:py-10' %}
+{% endif %}
+
+<div class="{{ color_class }} {{ py_class }}">
+  <div class="container-narrow w-full">
+    {{ element }}
+  </div>
+</div>
+
+</code></pre>
+
+---
+
+
 <pre><code data-trim class="language-php" data-line-numbers>
 protected function buildElementCta(string $title, array $body, Link $link): array {
     $elements = [];
@@ -207,4 +229,5 @@ https://drupal-starter.ddev.site:4443/style-guide#element-quote
 - 🧱 **Layout Twig** *(rare)*:
   Defines **layout** and **position**
   _e.g. two columns_
+
 
