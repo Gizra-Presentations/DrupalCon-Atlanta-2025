@@ -49,3 +49,4 @@ protected function buildElementCta(string $title, array $body, Link $link): arra
     $elements = $this->buildInnerElementLayout($elements, 'light-gray');
     return $this->wrapContainerNarrow($elements);
 }
+```
