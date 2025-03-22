@@ -438,3 +438,12 @@ ddev phpstan
 ```
 
 ![](assets/phpstan.jpg)
+
+---
+## Try It on Drupal-Starter
+
+1. 📚 Gizra’s **codified knowledge base**
+2. 🚀 Every new project **starts from this**
+3. 🔁 We constantly **feed it back** with new learnings
+
+👉 https://github.com/gizra/drupal-starter
