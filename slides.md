@@ -254,4 +254,96 @@ https://drupal-starter.ddev.site:4443/style-guide#element-quote
   Defines **layout** and **position**
   _e.g. two columns_
 
+---
 
+<pre><code data-trim class="language-php" data-line-numbers>
+# src/ThemeTrait/QuoteThemeTrait.php
+
+protected function buildElementQuote(array $image, array $quote, ?string $subtitle = NULL, ?string $image_credit = NULL): array {
+  $items = [];
+
+  // Quotation sign.
+  $items[] = ['#theme' => 'server_theme_quotation_sign'];
+
+  // Quote.
+  $element = $this->wrapTextResponsiveFontSize($quote, '2xl');
+  $items[] = $this->wrapTextColor($element, 'gray');
+
+  // Quote by.
+  $element = $this->wrapTextResponsiveFontSize($subtitle, 'sm');
+  $items[] = $this->wrapTextItalic($element);
+
+  // The photo credit on top of the image.
+  $credit = [];
+  if (!empty($image_credit)) {
+    $credit[] = ['#markup' => '© ' . $image_credit];
+  }
+
+  return [
+    '#theme' => 'server_theme_element_layout__split_image_and_content',
+    '#items' => $this->wrapContainerVerticalSpacing($items),
+    '#image' => $image,
+    '#credit' => $credit,
+  ];
+}
+</code></pre>
+
+---
+
+<pre><code data-trim class="language-twig" data-line-numbers>
+# server-theme-element-layout--split-image-and-content.html.twig
+
+<div class="flex flex-col sm:grid sm:grid-rows-1 md:grid-cols-2 gap-2 md:gap-8 lg:gap-10 overflow-hidden bg-gray-50">
+
+  {#
+  We use grid and row/col start to position both the image and the text on
+  the same cell.
+  #}
+  <div class="w-full grid grid-rows-1">
+    <figure class="row-start-1 col-start-1 child-object-cover h-full">
+      {{ image }}
+    </figure>
+
+    {% if credit  %}
+      <div class="row-start-1 col-start-1 self-end h-fit w-fit text-xs bg-white opacity-70 p-2">
+        {{ credit }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div>
+    {{ items }}
+  </div>
+</div>
+
+</code></pre>
+
+---
+
+<pre><code data-trim class="language-twig" data-line-numbers>
+# server-theme-element-layout--split-image-and-content.html.twig
+
+<div class="flex flex-col sm:grid sm:grid-rows-1 md:grid-cols-2 gap-2 md:gap-8 lg:gap-10 overflow-hidden bg-gray-50">
+
+  {#
+  We use grid and row/col start to position both the image and the text on
+  the same cell.
+  #}
+  <div class="w-full grid grid-rows-1">
+    <figure class="row-start-1 col-start-1 child-object-cover h-full">
+      {{ image }}
+    </figure>
+
+    {% if credit  %}
+      <div class="row-start-1 col-start-1 self-end h-fit w-fit text-xs bg-white opacity-70 p-2">
+        {{ credit }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="pt-5 pb-8 px-5 lg:py-8 lg:max-w-lg my-auto">
+    {{ items }}
+  </div>
+</div>
+
+</code></pre>
