@@ -426,9 +426,11 @@ public function buildFull(array $build, NodeInterface $entity) {
 
 ---
 
-✅ We provide **limited, intentional flexibility**
-✅ Clients can **mix & match Paragraphs**
-✅ But always within **known, tested layouts**
+## Why Not Layout Builder?
+
+- ✅ We provide **limited, intentional flexibility**
+- ✅ Clients can **mix & match Paragraphs**
+- ✅ But always within **known, tested layouts**
 
 🧱 Design system-driven, not freeform chaos
 
