@@ -186,6 +186,26 @@ server-theme-staff-card.html.twig
 
 ---
 
+<pre><code data-trim class="language-php" data-line-numbers>
+# src/ThemeTrait/ElementWrapThemeTrait.php
+
+protected function wrapContainerNarrow(array $element, ?string $bg_color = NULL): array {
+  $element = $this->filterEmptyElements($element);
+  if (empty($element)) {
+    // Element is empty, so no need to wrap it.
+    return [];
+  }
+
+  return [
+    '#theme' => 'server_theme_container_narrow',
+    '#element' => $element,
+    '#bg_color' => $bg_color,
+  ];
+}
+
+</code></pre>
+
+---
 
 <pre><code data-trim class="language-php" data-line-numbers>
 protected function buildElementCta(string $title, array $body, Link $link): array {
