@@ -378,6 +378,21 @@ Note: 😵‍💫 Too much reverse-engineering
 # src/Plugin/EntityViewBuilder/NodeNews.php
 
 public function buildFull(array $build, NodeInterface $entity) {
+  return $build;
+}
+</code></pre>
+
+---
+
+
+![Blank News node](assets/news-blank.jpg)
+
+---
+
+<pre><code data-trim class="language-php" data-line-numbers>
+# src/Plugin/EntityViewBuilder/NodeNews.php
+
+public function buildFull(array $build, NodeInterface $entity) {
   // The node's label.
   $node_type = $this->entityTypeManager->getStorage('node_type')->load($entity->bundle());
   $label = $node_type->label();
@@ -401,3 +416,29 @@ public function buildFull(array $build, NodeInterface $entity) {
   return $build;
 }
 </code></pre>
+
+---
+
+1. 🧩 **Create a ThemeTrait**
+   - It receives only **simple values** like `Int`, `String`, `Array`, `Url`, `Link`
+   - ❌ Not `EntityInterface` objects
+
+2. 🎨 **Add to the Style Guide**
+   - Easy to preview, test, and QA
+
+3. 🔌 **Wire it to PEVB**
+   - PEVB gathers the data
+   - ❌ It does **not** return `#theme` directly
+   - ✅ Only the `ThemeTrait` builds render arrays
+
+---
+
+## Help from PHPStan
+
+```bash
+ddev phpstan
+```
+
+![](assets/phpstan-1.png)
+
+![](assets/phpstan-2.png)
