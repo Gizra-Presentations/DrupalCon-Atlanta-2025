@@ -419,6 +419,21 @@ public function buildFull(array $build, NodeInterface $entity) {
 
 ---
 
+## Why Not Layout Builder?
+
+- ❌ Clients don’t need full layout freedom
+- ❌ Unlimited flexibility = unlimited QA surface
+
+---
+
+✅ We provide **limited, intentional flexibility**
+✅ Clients can **mix & match Paragraphs**
+✅ But always within **known, tested layouts**
+
+🧱 Design system-driven, not freeform chaos
+
+---
+
 1. 🧩 **Create a ThemeTrait**
    - It receives only **simple values** like `Int`, `String`, `Array`, `Url`, `Link`
    - ❌ Not `EntityInterface` objects
