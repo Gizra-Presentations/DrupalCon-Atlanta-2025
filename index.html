@@ -21,8 +21,34 @@
 			<section>
 				<img src="assets/cta.jpg">
 			</section>
+
 			<section>
-				<!-- Show codeblock, highlight php -->
+				<pre><code class="php">
+protected function buildElementCta(string $title, array $body, Link $link): array {
+	$elements = [];
+
+	// Title.
+	$element = $title;
+	$element = $this->wrapTextResponsiveFontSize($element, '3xl');
+	$element = $this->wrapTextCenter($element);
+	$elements[] = $this->wrapTextFontWeight($element, 'bold');
+
+	// Text.
+	$elements[] = $this->wrapProseText($body);
+
+	// Button.
+	$elements[] = $this->buildButton($link->getText(), $link->getUrl(), 'primary', NULL, $link->getUrl()->isExternal());
+
+	$elements = $this->wrapContainerVerticalSpacingBig($elements, 'center');
+
+	$elements = $this->buildInnerElementLayout($elements, 'light-gray');
+	return $this->wrapContainerNarrow($elements);
+	}
+				</code></pre>
+			</section>
+
+
+			<section>
 				<pre><code class="php">
 declare(strict_types=1);
 
