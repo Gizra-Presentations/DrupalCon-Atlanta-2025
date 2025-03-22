@@ -59,3 +59,17 @@ https://drupal-starter.ddev.site:4443/style-guide
 
 ![Style guide](assets/style-guide.jpg)
 ---
+
+## Reasoning with Twig Files
+
+- 🧠 Lower the effort of **mental modeling**
+- 📄 What you see in the Twig is what you get
+- 🔄 Predictable structure
+
+---
+
+```bash
+server-theme-staff-card.html.twig
+```
+
+![](assets/long-twig.jpg)
