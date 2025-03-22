@@ -5,17 +5,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js + Prism</title>
+	<title>reveal.js</title>
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/black.css">
 
-	<!-- Prism.js theme (you can change this to any other Prism theme) -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.css">
-
-	<!-- Optional: line numbers plugin -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.css">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 </head>
 
 <body>
@@ -25,32 +22,24 @@
 				data-separator-notes="^Note:">
 			</section>
 		</div>
+
 	</div>
 
-	<!-- Reveal core and plugins -->
 	<script src="dist/reveal.js"></script>
 	<script src="plugin/notes/notes.js"></script>
 	<script src="plugin/markdown/markdown.js"></script>
-
-	<!-- Prism.js core -->
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
-	<!-- Prism: PHP language -->
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
-	<!-- Optional: line numbers -->
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js"></script>
-
+	<script src="plugin/highlight/highlight.js"></script>
 	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
-			plugins: [RevealMarkdown, RevealNotes]
-		});
 
-		// Prism highlight after markdown is rendered
-		Reveal.on('ready', () => {
-			Prism.highlightAll();
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
 	</script>
-
 </body>
 
 </html>
