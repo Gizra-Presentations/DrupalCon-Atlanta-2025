@@ -333,3 +333,71 @@ protected function buildElementQuote(array $image, array $quote, ?string $subtit
 </div>
 
 </code></pre>
+
+---
+
+## "Where Is This Element Coming From?"
+
+- 🧩 A **Block**?
+  Check block visibility settings?
+
+- 🎛 A **Formatter**?
+  Maybe custom logic in the display config?
+
+- 🧙‍♂️ **Preprocessed**?
+  Data massaged via `hook_preprocess_*`?
+
+- 🕵️‍♂️ **Inspecting the CSS class**
+  …just to guess which template or source it came from
+
+Note: 😵‍💫 Too much reverse-engineering
+
+---
+
+## PEVB Controls Everything (via Code)
+
+- 🧱 No **Layout Manager modules**
+- 🧩 No **Field UI** for field order
+- 🪄 No **hooks** or **preprocess** magic
+
+---
+
+## PEVB Controls Everything (via Code)
+
+- ✅ **PEVB** fetchs the data
+- ✅ Passes to `ThemeTrait`s for display
+- ✅ If it looks right on the style guide, it’s right
+
+---
+
+![News nodes](assets/news.jpg)
+
+---
+
+<pre><code data-trim class="language-php" data-line-numbers>
+# src/Plugin/EntityViewBuilder/NodeNews.php
+
+public function buildFull(array $build, NodeInterface $entity) {
+  // The node's label.
+  $node_type = $this->entityTypeManager->getStorage('node_type')->load($entity->bundle());
+  $label = $node_type->label();
+
+  // The hero responsive image.
+  $medias = $entity->get('field_featured_image')->referencedEntities();
+  $image = $this->buildEntities($medias, 'hero');
+
+  $element = $this->buildElementNodeNews(
+    $entity->label(),
+    $label,
+    $this->getFieldOrCreatedTimestamp($entity, 'field_publish_date'),
+    $image,
+    $this->buildProcessedText($entity),
+    $this->buildTags($entity),
+    $this->buildSocialShare($entity),
+  );
+
+  $build[] = $element;
+
+  return $build;
+}
+</code></pre>
