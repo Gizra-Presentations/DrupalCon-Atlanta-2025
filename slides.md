@@ -437,5 +437,4 @@ public function buildFull(array $build, NodeInterface $entity) {
 ddev phpstan
 ```
 
-
-![](assets/phpstan.png)
+![](assets/phpstan.jpg)
