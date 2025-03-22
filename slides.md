@@ -29,6 +29,8 @@ Time breakdown for a typical new Paragraph:
 ---
 
 <pre><code data-trim class="language-php" data-line-numbers>
+# src/ThemeTrait/CtaThemeTrait.php
+
 protected function buildElementCta(string $title, array $body, Link $link): array {
     $elements = [];
 
@@ -208,6 +210,8 @@ protected function wrapContainerNarrow(array $element, ?string $bg_color = NULL)
 ---
 
 <pre><code data-trim class="language-php" data-line-numbers>
+# src/ThemeTrait/CtaThemeTrait.php
+
 protected function buildElementCta(string $title, array $body, Link $link): array {
     $elements = [];
 
