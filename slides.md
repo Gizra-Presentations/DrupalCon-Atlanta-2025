@@ -1,3 +1,9 @@
+<div style="max-height: 600px; overflow-y: auto;">
+  <img src="assets/drupal-starter.jpg" style="width: 100%;">
+</div>
+
+
+---
 
 ![CTA Screenshot](assets/cta.jpg)
 ---
