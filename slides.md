@@ -1,7 +1,14 @@
+_`Pluggable Entity View Builder and the Amazing Drupal-Starter`_
+
+<div style="display: block; font-size: 0.7em; margin-top: 2em; color: darkgrey;">https://github.com/gizra/drupal-starter<div>
+
+<div style="display: block; font-size: 0.7em; margin-top: 2em; color: darkgrey;">@amitaibu</div>
+
+---
+
 <div style="max-height: 600px; overflow-y: auto;">
   <img src="assets/drupal-starter.jpg" style="width: 100%;">
 </div>
-
 
 ---
 
