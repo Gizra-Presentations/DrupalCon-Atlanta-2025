@@ -431,6 +431,35 @@ public function buildFull(array $build, NodeInterface $entity) {
 </code></pre>
 
 ---
+<pre><code data-trim class="language-php" data-line-numbers>
+# src/ThemeTrait/ElementNodeNewsThemeTrait.php
+
+protected function buildElementNodeNews(string $title, string $label, int $timestamp, array $image, array $body, array $tags, array $social_share): array {
+  $elements = [];
+
+  // Header.
+  $element = $this->buildHeader(
+    $title,
+    $label,
+    $timestamp
+  );
+  $elements[] = $this->wrapContainerWide($element);
+
+  // Main content and sidebar.
+  $element = $this->buildMainAndSidebar(
+    $image,
+    $this->wrapProseText($body),
+    $tags,
+    $social_share,
+  );
+  $elements[] = $this->wrapContainerWide($element);
+
+  $elements = $this->wrapContainerVerticalSpacingBig($elements);
+  return $this->wrapContainerBottomPadding($elements);
+}
+</code></pre>
+
+---
 
 ## Why Not Layout Builder?
 
