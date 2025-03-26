@@ -22,21 +22,17 @@ _`Pluggable Entity View Builder and the Amazing Drupal-Starter`_
 
 ## My Goals
 
+- ✅ Rigid flexibility
 - ✅ Easy maintenance
 - ✅ Easy to jump between projects
-- ✅ Familiarity and consistency
-- ✅ Easy copy/paste
 - ✅ No “Where is this element coming from?”
 
 ---
 
 ## Creating and Theming a Paragraph
 
-Time breakdown for a typical new Paragraph:
-
-- 🧱 Create Paragraph type: **~1h**
-- 🧪 Copy/paste automatic tests: **~0.5h**
-- 🎨 Theming: **~4h**
+- 🧱 Create Paragraph type & automatic tests: **~1h**
+- 🎨 Theming: **~2h**
 
 *Theming is the time-consuming part*
 
