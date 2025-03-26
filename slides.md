@@ -1,3 +1,8 @@
+
+![QR code](assets/qr-code.jpg)
+
+---
+
 _`Pluggable Entity View Builder and the Amazing Drupal-Starter`_
 
 <div style="display: block; font-size: 0.7em; margin-top: 2em; color: darkgrey;">https://github.com/gizra/drupal-starter<div>
