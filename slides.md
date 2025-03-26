@@ -350,19 +350,15 @@ protected function buildElementQuote(array $image, array $quote, ?string $subtit
 
 ---
 
-## "Where Is This Element Coming From?"
+## Where Is This Element Coming From?
 
-- 🧩 A **Block**?
-  Check block visibility settings?
+- 🧩 Block?
 
-- 🎛 A **Formatter**?
-  Maybe custom logic in the display config?
+- 🎛 Formatter?
 
-- 🧙‍♂️ **Preprocessed**?
-  Data massaged via `hook_preprocess_*`?
+- 🧙‍♂️ Preprocessed?
 
 - 🕵️‍♂️ **Inspecting the CSS class**
-  …just to guess which template or source it came from
 
 Note: 😵‍💫 Too much reverse-engineering
 
@@ -479,17 +475,9 @@ protected function buildElementNodeNews(string $title, string $label, int $times
 
 ---
 
-1. 🧩 **Create a ThemeTrait**
-   - It receives only **simple values** like `Int`, `String`, `Array`, `Url`, `Link`
-   - ❌ Not `EntityInterface` objects
-
-2. 🎨 **Add to the Style Guide**
-   - Easy to preview, test, and QA
-
-3. 🔌 **Wire it to PEVB**
-   - PEVB gathers the data
-   - ❌ It does **not** return `#theme` directly
-   - ✅ Only the `ThemeTrait` builds render arrays
+1. 🧩 Create a ThemeTrait
+2. 🎨 Add to the Style Guide
+3. 🔌 Wire it to PEVB
 
 ---
 
