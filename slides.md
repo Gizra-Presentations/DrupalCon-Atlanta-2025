@@ -471,9 +471,9 @@ protected function buildElementNodeNews(string $title, string $label, int $times
 - ✅ Clients can **mix & match Paragraphs**
 - ✅ But always within **known, tested layouts**
 
-🧱 Design system-driven, not freeform chaos
-
 ---
+
+## Code Flow
 
 1. 🧩 Create a ThemeTrait
 2. 🎨 Add to the Style Guide
