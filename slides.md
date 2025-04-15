@@ -25,7 +25,6 @@ _`Pluggable Entity View Builder and the Amazing Drupal-Starter`_
 - ✅ Rigid flexibility
 - ✅ Easy maintenance
 - ✅ Easy to jump between projects
-- ✅ No “Where is this element coming from?”
 
 ---
 
@@ -42,33 +41,6 @@ _`Pluggable Entity View Builder and the Amazing Drupal-Starter`_
 
 ---
 
-<pre><code data-trim class="language-php" data-line-numbers>
-# src/ThemeTrait/CtaThemeTrait.php
-
-protected function buildElementCta(string $title, array $body, Link $link): array {
-    $elements = [];
-
-    // Title.
-    $element = $title;
-    $element = $this->wrapTextResponsiveFontSize($element, '3xl');
-    $element = $this->wrapTextCenter($element);
-    $elements[] = $this->wrapTextFontWeight($element, 'bold');
-
-    // Text.
-    $elements[] = $this->wrapProseText($body);
-
-    // Button.
-    $elements[] = $this->buildButton($link->getText(), $link->getUrl(), 'primary', NULL, $link->getUrl()->isExternal());
-
-    $elements = $this->wrapContainerVerticalSpacingBig($elements, 'center');
-
-    $elements = $this->buildInnerElementLayout($elements, 'light-gray');
-    return $this->wrapContainerNarrow($elements);
-}
-</code></pre>
-
----
-
 ```
 https://drupal-starter.ddev.site:4443/style-guide
 ```
@@ -76,19 +48,18 @@ https://drupal-starter.ddev.site:4443/style-guide
 ![Style guide](assets/style-guide.jpg)
 ---
 
-## Reasoning with Twig Files
-
-- 🧠 Lower the effort of **mental modeling**
-- 📄 What you see in the Twig is what you get
-- 🔄 Predictable structure
-
----
-
 ```bash
 server-theme-staff-card.html.twig
 ```
 
 ![](assets/long-twig.jpg)
+
+---
+
+## Reasoning with Twig Files
+
+- 🧠 Lower the **cognitive load**
+- 🔄 Predictable structure
 
 ---
 
